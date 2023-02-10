@@ -12,7 +12,7 @@ export class SearchForm extends Component {
     const { name } = this.state;
     const { onSubmit } = this.props;
     e.preventDefault();
-    if (!name) {
+    if (!name.trim()) {
       alert('Please, enter search name');
     }
     onSubmit(name);
@@ -20,7 +20,6 @@ export class SearchForm extends Component {
   };
   handleNameChange = e => {
     const { name, value } = e.target;
-
     this.setState({ [name]: value });
   };
   reset = () => {
